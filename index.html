@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>D·CAMP 5F 대관 투어 안내 매뉴얼</title>
-<meta name="description" content="D·CAMP 5F 대관 공간 투어 및 운영 안내 매뉴얼">
+<title>D·CAMP 4~5F 대관 투어 안내 매뉴얼</title>
+<meta name="description" content="D·CAMP 마포 4~5층 대관 공간 투어 및 운영 안내 매뉴얼">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
@@ -31,7 +31,12 @@ header h1{font-size:24px;font-weight:900;letter-spacing:-.5px;margin-bottom:4px}
 header h1 span{color:var(--accent)}
 header p{font-size:13px;color:var(--text3);font-weight:400}
 .map-section{margin:24px 0 0;position:relative}
+.map-grid{display:grid;grid-template-columns:1fr;gap:14px}
 .map-wrap{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px;box-shadow:var(--shadow)}
+.map-card-head{display:flex;justify-content:space-between;align-items:flex-end;gap:10px;margin-bottom:12px}
+.map-card-title{font-size:15px;font-weight:900;letter-spacing:-.2px}
+.map-card-sub{font-size:11px;color:var(--text3);margin-top:2px}
+.map-chip{display:inline-flex;align-items:center;padding:5px 10px;border-radius:999px;background:var(--bg2);border:1px solid var(--border);font-size:11px;font-weight:700;color:var(--text2);white-space:nowrap}
 .map-hint{text-align:center;font-size:11px;color:var(--text3);margin-top:8px;letter-spacing:.3px}
 svg{display:block;width:100%;height:auto}
 .room{cursor:pointer}
@@ -68,11 +73,43 @@ svg{display:block;width:100%;height:auto}
 }
 .section-title.open::before{transform:rotate(90deg)}
 .section-body{overflow:hidden;max-height:0;transition:max-height .3s ease;padding:0}
-.section-body.open{max-height:2200px;padding:8px 0}
+.section-body.open{max-height:12000px;padding:8px 0}
 .item{font-size:13px;line-height:1.9;color:var(--text2);padding:2px 0 2px 20px;position:relative}
 .item::before{content:'';position:absolute;left:6px;top:12px;width:5px;height:5px;border-radius:50%;background:var(--border2)}
 .item.warn{color:var(--accent);font-weight:500}
 .item.warn::before{background:var(--accent)}
+.paragraph{font-size:13px;line-height:1.9;color:var(--text2);padding:2px 0}
+.table-wrap{overflow:auto;margin:10px 0 2px;border:1px solid var(--border);border-radius:14px;background:var(--card)}
+.info-table{width:100%;border-collapse:collapse;font-size:12px}
+.info-table th,.info-table td{padding:11px 12px;border-bottom:1px solid var(--border);vertical-align:top;text-align:left}
+.info-table th{background:var(--bg2);font-weight:800;color:var(--text)}
+.info-table tr:last-child td{border-bottom:0}
+.info-table td:first-child{font-weight:700;color:var(--text);white-space:nowrap;min-width:120px}
+.note-box{margin:12px 0 4px;padding:12px 14px;border-radius:14px;border:1px solid #fecaca;background:var(--accent2);color:#7f1d1d;font-size:12px;line-height:1.75}
+.note-box.neutral{border-color:var(--border);background:var(--bg2);color:var(--text2)}
+.note-box strong{display:block;font-size:12px;font-weight:800;margin-bottom:4px;color:inherit}
+.route-summary{margin:12px 0 10px;padding:14px 16px;border-radius:16px;background:linear-gradient(135deg,#fff7ed,#ffedd5);border:1px solid #fdba74;box-shadow:var(--shadow)}
+.route-label{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:999px;background:#fff;color:#9a3412;font-size:11px;font-weight:800;letter-spacing:.2px}
+.route-label::before{content:"→";font-weight:900}
+.route-copy{margin-top:8px;font-size:14px;line-height:1.75;color:#7c2d12;font-weight:800;letter-spacing:-.2px}
+.route-subcopy{margin-top:6px;font-size:12px;line-height:1.75;color:#9a3412}
+.route-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:12px 0}
+.route-step{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:12px 12px 10px;box-shadow:var(--shadow)}
+.route-step-head{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+.route-step-no{width:24px;height:24px;border-radius:999px;background:#111827;color:#fff;font-size:12px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.route-step-title{font-size:12px;font-weight:900;color:var(--text);letter-spacing:-.2px}
+.route-step-body{font-size:12px;line-height:1.7;color:var(--text2)}
+.guide-card{margin:12px 0 4px;border:1px solid var(--border);border-radius:16px;background:var(--card);overflow:hidden;box-shadow:var(--shadow)}
+.guide-card.route-guide{overflow:hidden;border-color:#d9dee8}
+.guide-visual{border-bottom:1px solid var(--border)}
+.guide-visual img{display:block;width:100%;height:auto}
+.guide-meta{padding:12px 14px}
+.guide-title{font-size:16px;font-weight:900;letter-spacing:-.3px}
+.guide-text{font-size:12px;color:var(--text2);margin-top:4px;line-height:1.7}
+.guide-keypoints{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.guide-chip{display:inline-flex;align-items:center;padding:5px 10px;border-radius:999px;background:var(--bg2);border:1px solid var(--border);font-size:11px;font-weight:700;color:var(--text2)}
+.guide-image-link{display:block;text-decoration:none}
+.guide-image-hint{margin-top:8px;font-size:12px;color:var(--text3);text-align:right}
 .footer{text-align:center;padding:32px 0 0;border-top:1px solid var(--border);margin-top:32px}
 .footer p{font-size:11px;color:var(--text3)}
 @media (max-width:640px){
@@ -81,53 +118,151 @@ svg{display:block;width:100%;height:auto}
   header h1{font-size:22px}
   .map-wrap{padding:14px}
   .space-header{align-items:flex-start}
+  .route-steps{grid-template-columns:1fr}
 }
 </style>
 </head>
 <body>
 <div class="wrap">
   <header>
-    <h1><span>D·CAMP</span> 5F 대관 투어 안내 매뉴얼</h1>
-    <p>운영 매니저 사전답사 및 대관 안내용</p>
+    <h1><span>D·CAMP</span> 4~5F 대관 투어 안내 매뉴얼</h1>
+    <p>층별 공간 구조와 운영 기준을 분리해 확인할 수 있도록 정리한 문서</p>
   </header>
 
   <div class="map-section">
+    <div class="map-grid">
     <div class="map-wrap">
-      <svg viewBox="0 0 520 440" id="floormap" aria-label="D.CAMP 5F floor map">
-        <rect x="20" y="20" width="480" height="400" rx="10" fill="var(--bg2)" stroke="var(--border2)" stroke-width=".5"/>
+      <div class="map-card-head">
+        <div>
+          <div class="map-card-title">5층 대관 도면</div>
+          <div class="map-card-sub">박병원홀, A/C 창고, 세미나 A, 컨퍼런스룸</div>
+        </div>
+        <div class="map-chip">운영 기준: 5F</div>
+      </div>
+      <svg viewBox="0 0 520 440" id="floormap-5f" aria-label="D.CAMP 5F floor map">
+        <rect x="20" y="20" width="480" height="400" rx="10" fill="#111827" stroke="#1f2937" stroke-width="2"/>
         <text x="32" y="16" font-size="14" font-weight="900" fill="var(--text3)" font-family="inherit" letter-spacing="1">5F</text>
+
+        <rect x="38" y="38" width="444" height="364" rx="6" fill="none" stroke="#F9FAFB" stroke-width="2"/>
+
         <g class="room" data-id="storage">
-          <rect x="30" y="30" width="100" height="55" rx="8" fill="#78716c"/>
-          <text x="80" y="55" text-anchor="middle" font-size="13" font-weight="700" fill="#fff" font-family="inherit">A/C</text>
-          <text x="80" y="70" text-anchor="middle" font-size="10" fill="rgba(255,255,255,.6)" font-family="inherit">창고</text>
+          <rect x="56" y="56" width="112" height="56" rx="6" fill="#374151"/>
+          <text x="112" y="84" text-anchor="middle" font-size="13" font-weight="800" fill="#E5E7EB" font-family="inherit">A/C 창고</text>
+          <text x="112" y="100" text-anchor="middle" font-size="9" fill="#9CA3AF" font-family="inherit">지원 공간</text>
         </g>
+
+        <rect x="180" y="56" width="160" height="56" rx="6" fill="#1F2937" stroke="#6B7280" stroke-width="1.5"/>
+        <text x="260" y="84" text-anchor="middle" font-size="11" font-weight="700" fill="#D1D5DB" font-family="inherit">공용홀 / 복도</text>
+        <text x="260" y="100" text-anchor="middle" font-size="9" fill="#9CA3AF" font-family="inherit">엘리베이터 홀 인접</text>
+
         <g class="room" data-id="storage">
-          <rect x="390" y="30" width="100" height="55" rx="8" fill="#78716c"/>
-          <text x="440" y="55" text-anchor="middle" font-size="13" font-weight="700" fill="#fff" font-family="inherit">A/C</text>
-          <text x="440" y="70" text-anchor="middle" font-size="10" fill="rgba(255,255,255,.6)" font-family="inherit">창고</text>
+          <rect x="352" y="56" width="112" height="56" rx="6" fill="#374151"/>
+          <text x="408" y="84" text-anchor="middle" font-size="13" font-weight="800" fill="#E5E7EB" font-family="inherit">A/C 창고</text>
+          <text x="408" y="100" text-anchor="middle" font-size="9" fill="#9CA3AF" font-family="inherit">지원 공간</text>
         </g>
+
         <g class="room" data-id="bahk">
-          <rect x="30" y="100" width="250" height="260" rx="8" fill="#1d4ed8"/>
-          <text x="155" y="218" text-anchor="middle" font-size="17" font-weight="900" fill="#fff" font-family="inherit">박병원홀</text>
-          <text x="155" y="238" text-anchor="middle" font-size="11" fill="rgba(255,255,255,.55)" font-family="inherit">Bahk Byongwon Hall</text>
-          <text x="155" y="256" text-anchor="middle" font-size="10" fill="rgba(255,255,255,.35)" font-family="inherit">메인 대관</text>
+          <rect x="56" y="132" width="246" height="194" rx="8" fill="#059669"/>
+          <text x="179" y="222" text-anchor="middle" font-size="19" font-weight="900" fill="#fff" font-family="inherit">박병원홀</text>
+          <text x="179" y="246" text-anchor="middle" font-size="11" fill="rgba(255,255,255,.75)" font-family="inherit">Bahk Byongwon Hall</text>
+          <text x="179" y="266" text-anchor="middle" font-size="10" fill="rgba(255,255,255,.62)" font-family="inherit">메인 대관 공간</text>
         </g>
-        <g class="room" data-id="seminar">
-          <rect x="310" y="100" width="180" height="140" rx="8" fill="#059669"/>
-          <text x="400" y="165" text-anchor="middle" font-size="15" font-weight="700" fill="#fff" font-family="inherit">세미나 A</text>
-          <text x="400" y="183" text-anchor="middle" font-size="10" fill="rgba(255,255,255,.55)" font-family="inherit">Seminar A</text>
+
+        <g class="room" data-id="seminar5">
+          <rect x="320" y="132" width="144" height="92" rx="8" fill="#059669"/>
+          <text x="392" y="176" text-anchor="middle" font-size="16" font-weight="800" fill="#fff" font-family="inherit">세미나 A</text>
+          <text x="392" y="196" text-anchor="middle" font-size="10" fill="rgba(255,255,255,.72)" font-family="inherit">5층 세미나실</text>
         </g>
+
         <g class="room" data-id="conference">
-          <rect x="310" y="270" width="180" height="130" rx="8" fill="#7c3aed"/>
-          <text x="400" y="330" text-anchor="middle" font-size="15" font-weight="700" fill="#fff" font-family="inherit">컨퍼런스룸</text>
-          <text x="400" y="348" text-anchor="middle" font-size="10" fill="rgba(255,255,255,.55)" font-family="inherit">Conference Room</text>
+          <rect x="320" y="234" width="144" height="92" rx="8" fill="#059669"/>
+          <text x="392" y="278" text-anchor="middle" font-size="15" font-weight="800" fill="#fff" font-family="inherit">컨퍼런스룸</text>
+          <text x="392" y="298" text-anchor="middle" font-size="10" fill="rgba(255,255,255,.72)" font-family="inherit">Conference Room</text>
         </g>
-        <g transform="translate(245,416)">
-          <polygon points="0,-8 6,0 -6,0" fill="#dc2626"/>
-          <text x="0" y="11" text-anchor="middle" font-size="9" fill="#dc2626" font-weight="700" font-family="inherit">HERE</text>
+
+        <rect x="168" y="340" width="184" height="44" rx="6" fill="#1F2937" stroke="#6B7280" stroke-width="1.5"/>
+        <text x="260" y="366" text-anchor="middle" font-size="11" font-weight="700" fill="#D1D5DB" font-family="inherit">출입 / 엘리베이터 홀</text>
+
+        <g transform="translate(260,402)">
+          <polygon points="0,14 8,0 -8,0" fill="#dc2626"/>
+          <text x="0" y="-6" text-anchor="middle" font-size="10" fill="#dc2626" font-weight="700" font-family="inherit">HERE</text>
         </g>
       </svg>
-      <div class="map-hint">공간을 클릭하면 상세 정보로 이동합니다</div>
+      <div class="map-hint">공간을 클릭하면 해당 5층 상세 정보로 이동합니다</div>
+    </div>
+
+    <div class="map-wrap">
+      <div class="map-card-head">
+        <div>
+          <div class="map-card-title">4층 대관 도면</div>
+          <div class="map-card-sub">대관 운영 기준은 세미나 A / B / C 중심으로 안내</div>
+        </div>
+        <div class="map-chip">운영 기준: 4F</div>
+      </div>
+      <svg viewBox="0 0 520 620" id="floormap-4f" aria-label="D.CAMP 4F floor map">
+        <rect x="20" y="20" width="480" height="580" rx="10" fill="#111827" stroke="#1f2937" stroke-width="2"/>
+        <text x="32" y="16" font-size="14" font-weight="900" fill="var(--text3)" font-family="inherit" letter-spacing="1">4F</text>
+
+        <rect x="38" y="38" width="444" height="544" rx="6" fill="none" stroke="#F9FAFB" stroke-width="2"/>
+
+        <rect x="50" y="50" width="66" height="62" rx="6" fill="#374151"/>
+        <text x="83" y="85" text-anchor="middle" font-size="11" font-weight="700" fill="#E5E7EB" font-family="inherit">Office</text>
+
+        <rect x="126" y="50" width="56" height="62" rx="6" fill="#1F2937" stroke="#6B7280" stroke-width="1.5"/>
+        <text x="154" y="85" text-anchor="middle" font-size="9" font-weight="700" fill="#D1D5DB" font-family="inherit">공용</text>
+
+        <rect x="192" y="50" width="86" height="62" rx="6" fill="#1F2937" stroke="#6B7280" stroke-width="1.5"/>
+        <text x="235" y="85" text-anchor="middle" font-size="9" font-weight="700" fill="#D1D5DB" font-family="inherit">계단/복도</text>
+
+        <rect x="360" y="50" width="48" height="54" rx="6" fill="#374151"/>
+        <text x="384" y="81" text-anchor="middle" font-size="10" font-weight="700" fill="#E5E7EB" font-family="inherit">Studio</text>
+
+        <rect x="416" y="50" width="56" height="92" rx="6" fill="#374151"/>
+        <text x="444" y="92" text-anchor="middle" font-size="10" font-weight="700" fill="#E5E7EB" font-family="inherit">Studio</text>
+
+        <rect x="314" y="118" width="44" height="18" rx="4" fill="#374151"/>
+        <text x="336" y="131" text-anchor="middle" font-size="8" font-weight="800" fill="#E5E7EB" font-family="inherit">TPS</text>
+
+        <g class="room" data-id="floor4">
+          <rect x="58" y="170" width="156" height="150" rx="8" fill="#059669"/>
+          <text x="136" y="245" text-anchor="middle" font-size="18" font-weight="800" fill="#fff" font-family="inherit">Seminar B</text>
+          <text x="136" y="267" text-anchor="middle" font-size="11" fill="rgba(255,255,255,.72)" font-family="inherit">4층 대관</text>
+        </g>
+
+        <g class="room" data-id="floor4">
+          <rect x="58" y="332" width="156" height="150" rx="8" fill="#059669"/>
+          <text x="136" y="407" text-anchor="middle" font-size="18" font-weight="800" fill="#fff" font-family="inherit">Seminar A</text>
+          <text x="136" y="429" text-anchor="middle" font-size="11" fill="rgba(255,255,255,.72)" font-family="inherit">4층 대관</text>
+        </g>
+
+        <g class="room" data-id="floor4">
+          <polygon points="286,214 362,170 426,234 350,314 274,250" fill="#059669"/>
+          <text x="350" y="247" text-anchor="middle" font-size="17" font-weight="800" fill="#fff" font-family="inherit">Seminar C</text>
+          <text x="350" y="268" text-anchor="middle" font-size="11" fill="rgba(255,255,255,.72)" font-family="inherit">4층 대관</text>
+        </g>
+
+        <polygon points="300,374 352,346 404,374 416,432 366,482 314,468 292,416" fill="#374151" stroke="#9CA3AF" stroke-width="1.5"/>
+        <text x="354" y="424" text-anchor="middle" font-size="15" font-weight="700" fill="#E5E7EB" font-family="inherit">Meeting A</text>
+
+        <rect x="414" y="276" width="52" height="84" rx="6" fill="#374151"/>
+        <text x="440" y="324" text-anchor="middle" font-size="12" font-weight="700" fill="#E5E7EB" font-family="inherit">Meeting B</text>
+
+        <rect x="52" y="490" width="132" height="72" rx="6" fill="#374151"/>
+        <text x="118" y="531" text-anchor="middle" font-size="12" font-weight="700" fill="#E5E7EB" font-family="inherit">Startup Alliance</text>
+
+        <rect x="202" y="490" width="116" height="72" rx="6" fill="#1F2937" stroke="#6B7280" stroke-width="1.5"/>
+        <text x="260" y="531" text-anchor="middle" font-size="10" font-weight="700" fill="#D1D5DB" font-family="inherit">공용홀</text>
+
+        <rect x="326" y="490" width="140" height="72" rx="6" fill="#1F2937" stroke="#6B7280" stroke-width="1.5"/>
+        <text x="396" y="531" text-anchor="middle" font-size="10" font-weight="700" fill="#D1D5DB" font-family="inherit">계단 / 공용</text>
+
+        <g transform="translate(260,472)">
+          <polygon points="0,14 8,0 -8,0" fill="#dc2626"/>
+          <text x="0" y="-6" text-anchor="middle" font-size="10" fill="#dc2626" font-weight="700" font-family="inherit">HERE</text>
+        </g>
+      </svg>
+      <div class="map-hint">초록색 세미나 A / B / C가 현재 대관 운영 기준 공간입니다</div>
+    </div>
     </div>
   </div>
 
@@ -135,79 +270,110 @@ svg{display:block;width:100%;height:auto}
   <div id="content"></div>
 
   <div class="footer">
-    <p>본 문서는 5층 대관 공간 투어 안내 기준으로 작성되었으며, 운영 정책 변경 시 수정이 필요합니다.</p>
+    <p>본 문서는 디캠프 마포 4~5층 대관 공간 투어 안내 기준으로 작성되었으며, 운영 정책 변경 시 수정이 필요합니다.</p>
   </div>
 </div>
 
 <script>
 const SPACES={
+overview:{
+  name:"개요 및 공간 구성",sub:"Overview & Space Composition",tag:"문서 개요",
+  icon:"◎",iconBg:"#111827",badgeBg:"#e5e7eb",badgeC:"#111827",
+  sections:[
+    {t:"개요",text:[
+      "본 매뉴얼은 디캠프(D·CAMP) 마포 4~5층 대관 공간에 대한 사전답사 및 투어 안내 시 활용하는 문서입니다.",
+      "운영 매니저가 변경되어도 동일한 방식으로 안내할 수 있도록 층별 기준을 분리해 정리했습니다."
+    ]},
+    {t:"5층 공간 구성",table:{
+      headers:["공간","안내"],
+      rows:[
+        ["박병원홀","메인 대관 공간. 대형 행사용. 약 100석 규모. 서브 테이블 4개, 메인 스크린, 양쪽 98인치 TV, 마이크(유선 1개 + 무선 3개), 강연대 구비"],
+        ["A/C (창고)","의자 및 테이블 보관용 창고. 박병원홀 좌측에 위치. 기본적으로 개방되어 있음"],
+        ["세미나 A","5층 세미나실. 공식 정원 30인, 현장 최대 약 42석 운영 가능. 뒤쪽 유리 창고에 접이식 의자/테이블 보관"],
+        ["컨퍼런스룸","정부 부처 행사 등에 주로 활용. 구조적 특이사항 있음. HDMI 연결 시 사전 요청 필요"]
+      ]
+    }},
+    {t:"4층 공간 구성",table:{
+      headers:["공간","안내"],
+      rows:[
+        ["세미나 A","4층 대관 운영 공간. 도면 기준 Seminar A 구역"],
+        ["세미나 B","4층 대관 운영 공간. 도면 기준 Seminar B 구역"],
+        ["세미나 C","4층 대관 운영 공간. 도면 기준 Seminar C 구역"],
+        ["기타 표기 공간","Meeting / Studio / Office 등은 도면 표기 공간이며, 실제 대관 운영 가능 범위는 별도 확인 필요"]
+      ]
+    }},
+    {t:"4층 · 5층 구분 기준",items:[
+      "5층은 박병원홀, A/C 창고, 세미나 A, 컨퍼런스룸 중심으로 운영",
+      "4층은 도면 기준 세미나 A / B / C를 대관 운영 공간으로 안내",
+      "4층 설명과 5층 설명이 섞이지 않도록 층별로 나누어 안내하는 것이 원칙",
+      "공식 층별 안내와 실제 대관 운영 현황이 다를 수 있으므로, 최종 사용 가능 범위는 한우리님 통해 확인"
+    ]}
+  ]
+},
 bahk:{
   name:"박병원홀",sub:"Bahk Byongwon Hall",tag:"메인 대관",
   icon:"B",iconBg:"#1d4ed8",badgeBg:"#dbeafe",badgeC:"#1e40af",
   sections:[
     {t:"기본 시설 및 배치",items:[
-      "테이블이 없는 일반적인 의자 배치 공간 (일반적인 테이블만 있는 형태)",
-      "기본 좌석 약 100개 배치",
-      "오른쪽에 서브 테이블 4개 배치 — 리셉션, 바바나 음료 세팅 등 용도에 맞게 자유 사용",
-      "강연대 구비 — 이 사이즈 공간이면 보통 사회자가 마련된 행사가 많음",
+      "테이블이 없는 기본 강연형 의자 배치 공간",
+      "기본 좌석 약 100석 배치",
+      "오른쪽에 서브 테이블 4개 배치 — 리셉션, 다과, 음료 세팅 등 용도에 맞게 자유롭게 사용 가능",
+      "강연대 구비 — 이 규모의 공간은 사회자가 있는 행사가 많은 편",
       "강연대는 가용 범위 내에서 이동하여 진행 가능"
     ]},
-    {t:"영상 장비",items:[
-      "노트북 HDMI 연결 시 메인 스크린 + 양쪽 98인치 TV 동시 출력 (기본 세팅, 자동 연결)",
-      "TV에 출력을 원치 않으면 HDMI 선을 뽑으면 됨 (건물 측 요청 불필요, 직접 처리 가능)",
-      "⚠️ 외부 디스플레이는 디캠프 홍보 영상만 나오는 전용 화면 — 사용 불가로 안내",
-      "⚠️ 디스플레이 사용은 건부 검토 중에서도 진짜 특위권들에만 허용된 적 있음 — 기본적으로 안 된다고 안내"
-    ]},
-    {t:"음향 장비",items:[
-      "마이크: 유선 1개 + 무선 3개 = 총 4개",
-      "무선 마이크는 채널 조정 불필요, 그냥 켜고 사용하면 됨",
-      "주파수 변경 등은 금지되어 있음",
-      "⚠️ 추가 마이크 필요 시: 기본적으로 안 되나, 건바이건 검토 후 도와드릴 수 있음",
-      "⚠️ 추가 마이크 조건: 컨퍼런스룸이 비어 있어야 하고, 컨퍼런스룸도 대관이 돼야 함",
+    {t:"영상/음향 장비",items:[
+      "노트북 HDMI 연결 시 메인 스크린 + 양쪽 98인치 TV 동시 출력 (기본 세팅)",
+      "TV 출력을 원치 않으면 HDMI 선을 뽑아서 끄면 됨 — 건물 측 요청 없이 직접 처리 가능",
+      "마이크는 유선 1개 + 무선 3개, 총 4개",
+      "무선 마이크는 채널 조정 불필요 — 전원만 켜고 사용하면 됨",
+      "⚠️ 주파수 변경 등은 금지",
+      "⚠️ 추가 마이크가 필요한 경우 기본적으로는 어려우나, 건바이건 검토 후 지원 가능",
+      "⚠️ 추가 마이크는 컨퍼런스룸이 비어 있고, 컨퍼런스룸도 대관된 상태여야 검토 가능",
       "건물 관리실에 요청하여 무선 마이크 세팅 진행",
-      "적극적으로 도와드리는 경우: 파트너사 혹은 장차관급 정부 부처 행사 등"
+      "주로 파트너사 또는 장차관급 정부 부처 행사 등은 적극적으로 지원"
     ]},
     {t:"좌석 배치 조정",items:[
-      "의자 수량 조정 가능 — 왼쪽에 보이는 의자 창고에 수레가 있음",
-      "빼고 싶으면 수레 이용하여 창고 안에 보관, 끝나면 다시 복구",
-      "행사 주체가 자유롭게 배치 변경 가능, 끝나면 현재 상태로 원상복구 필수",
-      "참가자 인원뿐만 아니라 PT/강연 여부에 따라 공간 모습이 다르므로 반드시 사전답사 통해 확인 후 결정 권장",
-      "공간이 너무 크면 집중력이 떨어질 수 있으므로 참석자 수와 행사 성격 고려 필요"
+      "의자 수량 조정 가능 — 왼쪽 창고에 의자를 쌓아 이동할 수 있는 수레가 비치되어 있음",
+      "의자를 빼고 싶으면 수레를 이용해 창고에 보관하고 행사 후 반드시 원상복구",
+      "참가자 인원 대비 공간이 큰 경우 집중력 저하 우려가 있으므로, 참석자 수와 행사 성격을 고려해 배치 결정 권장",
+      "행사 주체가 자유롭게 배치 변경 가능하며, 종료 후 현재 상태로 원상복구 필수"
     ]},
     {t:"홍보물/배너 설치",items:[
       "기본적으로 스탠딩형(세우는 형태) 홍보물만 가능",
-      "좌석 양쪽에 자석이 붙는 구조 — 블랙보드에 동그란 자석 가져와서 붙이면 다 붙음",
-      "코너 배치 가능, 원하시는 위치에 배치 가능",
-      "고층부 차출도 등 엘리베이터 층 이용 가능",
-      "미리 요청 시 1층 건물 공용구 메인 게이트 앞쪽에도 배치 가능",
+      "좌석 양쪽은 자석이 붙는 구조 — 블랙보드에 동그란 자석을 활용해 부착 가능",
+      "코너 배치 포함, 원하는 위치로 배치 가능",
       "⚠️ 부착 형태의 홍보물은 금지",
-      "⚠️ 제한적 허용 시 실리콘 테이프(젤 타입의 말랑말랑한 테이프)만 사용 가능 — 별도 링크 안내 예정",
-      "⚠️ 롤업 배너 등으로 디캠프 로고를 가리는 형태(포토존 등) 금지 — 디캠프 협찬 로고가 명확히 보여야 함"
+      "⚠️ 제한적으로 허용되는 경우 실리콘 테이프(젤 타입)만 사용 가능",
+      "⚠️ 롤업 배너 등으로 디캠프 로고를 가리는 형태(포토존 등)는 금지 — 디캠프 협찬 로고가 명확히 보여야 함"
     ]},
     {t:"배너/현수막 사전 배송",items:[
-      "당일 오전 세팅이 어려울 경우 전날 오후에 배송 받아서 보관 가능",
+      "당일 오전 세팅이 어렵다면 전날 오후에 배송 받아 보관 가능",
       "수령인을 운영 매니저로 설정하고 연락처 공유",
-      "참고: 엘리베이터 없으므로 수령 후 직접 배치해야 함"
+      "참고: 엘리베이터가 없어 수령 후 직접 배치해야 함"
     ]},
     {t:"케이터링/다과 반입",items:[
-      "공간 안에서 먹으라고 하지는 않으나 음료 정도는 보통 드시는 편",
-      "음료, 일반적인 핑거푸드, 과자 같은 것은 많이 드시고 있음 — 거기까지는 제한하지 않음",
-      "냄새가 심한 음식, 쏟았을 때 오염이 될 수 있는 음식은 제한",
-      "케이터링 업체 이용 시 대부분 각자 테이블 가져와서 세팅",
-      "서브 테이블 활용하거나 아일랜드 테이블과 비춰서 티자식으로 세팅 가능",
-      "단, 여기 셋 다 대관한 게 아니라면 맞은편 대관 공간 손님이 있을 수 있고, 정수기나 출입을 막을 수 없음을 고려",
-      "1층에 입점된 카페에서 음료/커피/휘낭시에 주문 가능 — 2~30개 정도 미리 말씀하시고 선결제하면 가능"
+      "공간 내 음식 반입 가능 — 내부 취식보다는 포장/배포 형태 또는 음료 정도가 일반적",
+      "음료, 핑거푸드, 과자 등 일반적인 다과는 허용",
+      "냄새가 심한 음식, 쏟았을 때 오염 위험이 큰 음식은 제한",
+      "케이터링 업체 세팅 시 업체가 자체 테이블을 가져오는 경우가 많음",
+      "서브 테이블을 활용하거나 아일랜드 테이블과 조합해 세팅 가능",
+      "✔ 1층 카페에서 음료, 커피, 휘낭시에 주문 가능 — 20~30개 정도는 미리 요청 후 선결제하면 진행 가능"
     ]},
-    {t:"외부 서명/등록 안내",items:[
-      "보통 외부에서 서명/등록을 하는 경우가 많음",
-      "외부 진행 시 서브 테이블을 끌고 나와서 배치하면 됨",
-      "비공용 공간이고 맞은편에 두 개의 대관 공간이 있어 다른 분들도 자연스럽게 왕래 가능",
-      "이쪽은 그래도 왕래가 없는 편이라 외부 진행에 적합"
+    {t:"외부 서명 및 등록 안내",items:[
+      "외부에서 서명/등록을 진행하는 경우가 많음",
+      "서브 테이블을 밖으로 끌고 나와 배치 가능",
+      "다만 비공용 공간이고 맞은편에 두 개의 대관 공간이 있어 타 행사 참석자들도 자연스럽게 왕래할 수 있음",
+      "이 구간은 상대적으로 왕래가 적어 외부 등록 테이블 운영에 적합한 편"
+    ]},
+    {t:"디스플레이 사용 제한",items:[
+      "박병원홀 외부 디스플레이는 디캠프 홍보 영상 전용 화면",
+      "⚠️ 외부 디스플레이는 기본적으로 사용 불가",
+      "⚠️ 건물 검토가 들어가도 매우 예외적인 특수 행사에만 허용된 적 있음"
     ]},
     {t:"공간 규모 고려사항",items:[
-      "참가자 인원뿐만 아니라 PT/강연하시는 분이 있으면 여기서 하는 모습과 저쪽에서 하는 모습이 다름",
-      "반드시 사전답사를 통해 확인 후 결정 권장",
-      "공간이 너무 크면 집중력이 떨어질 수 있음 — 참석자 수와 행사 성격 고려"
+      "참가자 인원뿐 아니라 PT나 강연 여부에 따라 공간 활용 느낌이 크게 달라짐",
+      "반드시 사전답사를 통해 확인한 뒤 최종 결정 권장",
+      "공간이 너무 크면 집중력이 떨어질 수 있으므로 행사 성격과 참석자 수를 함께 고려해야 함"
     ]}
   ]
 },
@@ -216,53 +382,94 @@ storage:{
   icon:"A",iconBg:"#78716c",badgeBg:"#f5f5f4",badgeC:"#57534e",
   sections:[
     {t:"기본 정보",items:[
-      "기본적으로 항상 열려 있음",
-      "잠겨 있을 경우 비밀번호: 070",
-      "의자를 쌓아서 이동할 수 있는 수레가 비치되어 있음"
+      "기본적으로 항상 개방되어 있음",
+      "잠겨 있을 경우 비밀번호: 0701*",
+      "의자를 쌓아 이동할 수 있는 수레가 비치되어 있음"
     ]},
     {t:"사용 방법",items:[
-      "박병원홀 의자 수량 조정 시 수레를 이용하여 창고 안에 보관하고 끝나면 다시 복구",
+      "박병원홀 의자 수량 조정 시 수레를 이용해 창고에 보관하고 행사 후 다시 복구 안내",
       "창고 안에 접이식 테이블과 추가 의자도 보관되어 있음",
       "추가 테이블이 필요한 경우 창고에서 꺼내어 사용 가능",
-      "⚠️ 테이블/의자 사용 시 해당 창고 공간도 별도 대관이 필요할 수 있으므로 사전 확인 필요",
-      "누가 회의하고 있는데 막 가져갈 수 없으므로, 동시 대관 여부 확인 후 진행",
-      "⚠️ 특위 행사건이나 강한 요청이 있을 경우 — 해당 행사 측과 소통하여 방법 찾음 (예: 장관님 오시는 행사 등)"
-    ]},
-    {t:"주의사항",items:[
-      "⚠️ 행사 후 반드시 원상복구 필수",
-      "⚠️ 동시 대관 여부 확인 필요 — 다른 행사에서 이미 사용 중일 수 있음",
-      "기본적으로 행사 주체에서 대관 공간의 모든 것이 기본 상태이고, 원하시는 대로 배치 자유롭게 하되 끝나면 원상복구"
+      "⚠️ 추가 테이블 세팅은 기본적으로 해당 창고 안의 테이블/의자만 사용",
+      "⚠️ 누군가 회의 중일 수 있으므로 동시 대관 여부를 반드시 확인 후 진행",
+      "⚠️ 창고도 별도 대관이 필요할 수 있으므로 사전 확인 필요"
     ]}
   ]
 },
-seminar:{
-  name:"세미나 A",sub:"Seminar A",tag:"세미나실",
+seminar5:{
+  name:"5층 세미나 A",sub:"5F Seminar A",tag:"5층 세미나실",
   icon:"S",iconBg:"#059669",badgeBg:"#d1fae5",badgeC:"#065f46",
   sections:[
-    {t:"전자교탁",items:[
-      "전자교탁 내부에 PC와 음향 세팅이 포함되어 있음",
-      "PC는 사용 가능하나 조금 느림 — 실제로는 대부분 노트북 가져와서 꽂고 사용",
-      "시간이 되면 건물에서 기본 장비를 다 켜줌",
-      "⚠️ 전자교탁은 절대 이동하면 안 됨! 교탁 안에 PC와 음향 세팅이 있어서 이동 시 장비 손상 우려",
-      "⚠️ 안내문을 붙여놓았으나 간혹 움직이는 경우 있음 — 라운딩 시 발견하면 원위치 확인 필요"
+    {t:"기본 정보",items:[
+      "5층 세미나실은 세미나 A 한 개 공간으로 운영",
+      "공식 정원 30인 기준이나, 현장에서는 약 42석까지 운용 여지가 있음",
+      "4층보다 공간이 조금 더 넓고 책상도 더 큰 편",
+      "뒤쪽 유리 창고에 접이식 의자와 테이블 보관",
+      "4층과 달리 여유 공간이 있어 일부 증원 세팅이 가능"
     ]},
-    {t:"창고 및 테이블",items:[
-      "뒤쪽 창고 안에 의자와 접이식 테이블 보관",
-      "서브 테이블 4개 + 일반 의자 구조",
-      "추가 테이블/의자 필요 시 창고에서 꺼내 사용 가능",
-      "⚠️ 추가 테이블 세팅 가용 시 이 안의 테이블과 의자만 사용 (층 세미나실 대관 필요할 수 있음)"
+    {t:"영상 장비",items:[
+      "시간이 되면 건물에서 기본 장비를 켜두어 바로 사용 가능",
+      "기본은 스크린을 내려 HDMI를 연결해 사용",
+      "TV만 단독으로 쓰고 싶다면 미리 요청해야 하며, 건물 관리팀을 통해 세팅 조율 필요",
+      "영상 장비 관련 세팅 변경은 건물 관리팀을 통해 요청하는 방식으로 안내"
+    ]},
+    {t:"창고 및 좌석 세팅",items:[
+      "뒤쪽 유리 창고에 의자와 접이식 테이블 보관",
+      "추가 테이블/의자가 필요하면 꺼내어 세팅 가능",
+      "행사 후에는 반드시 원상복구해야 함",
+      "인원이 40명 안팎이지만 조금 더 늘어날 여지가 있으면 5층 세미나 A가 더 유리한 편"
+    ]},
+    {t:"음식 및 현수막 안내",items:[
+      "햄버거, 샌드위치처럼 자리에서 편하게 먹을 수 있는 음식은 허용",
+      "냄새가 강하거나 오염 이슈가 큰 음식은 제한",
+      "5층 세미나 A는 바닥이 카펫이 아니어서 흘리면 닦을 수 있는 편",
+      "중간중간 쓰레기 정리만 잘해주면 음식 반입은 비교적 유연하게 대응",
+      "현수막/부착물은 기본적으로 금지지만, 사진 촬영이 꼭 필요한 경우 예외적으로 협의 가능",
+      "실리콘 젤 테이프만 허용되며 쿠팡·인터넷에서 직접 구매 가능"
     ]},
     {t:"음향 커스텀 요청",items:[
-      "외부 업체를 불러서 음향을 커스텀하고 싶다는 요청이 간혹 있음 — 기본적으로 가능",
-      "⚠️ 콘솔룸(음향 조정실) 출입은 금지 — 건바이건으로 맞춰주면 원상복구 힘들고 관리 이슈 발생",
-      "커스텀 니즈가 있으면 기본적으로 가능하다고 안내 후, 사전에 니즈를 정리하여 공유 필요",
-      "콘솔을 여기에 설치하고 싶은 경우 작은 창문을 통해 선을 따오는 방식으로 진행 가능",
-      "업체와 건물 통신팀장님 연결 필요 — 통신팀장님이 메인 담당자",
-      "웬만한 커스텀 세팅은 거의 가능했음"
+      "외부 업체를 불러 음향을 커스텀하고 싶다는 요청이 간혹 있음 — 기본적으로 가능",
+      "커스텀 니즈가 있으면 사전에 필요 사항을 정리해 공유해야 함",
+      "콘솔 설치가 필요하면 작은 창문을 통해 선을 따오는 방식으로 진행 가능",
+      "업체와 건물 통신팀장님 연결 필요",
+      "⚠️ 콘솔룸(음향 조정실) 출입은 금지 — 원상복구 및 관리 이슈가 발생할 수 있음"
+    ]}
+  ]
+},
+floor4:{
+  name:"4층 세미나실",sub:"4F Seminar A / B / C",tag:"4층 대관",
+  icon:"4",iconBg:"#f97316",badgeBg:"#ffedd5",badgeC:"#9a3412",
+  sections:[
+    {t:"도면 기준 대관 공간",items:[
+      "4층 도면 기준으로는 세미나 A / 세미나 B / 세미나 C를 대관 운영 공간으로 안내",
+      "Meeting A / Meeting B / Studio / Office / Startup Alliance 등은 도면 표기 공간이며 기본 대관 안내 대상과는 구분",
+      "실제 사용 가능 범위는 행사 일정과 운영 상황에 따라 한우리님 통해 최종 확인 필요"
     ]},
-    {t:"주의사항",items:[
-      "⚠️ 전자교탁 이동 금지 (라운딩 시 확인 필요)",
-      "⚠️ 콘솔룸 개방 요청 시 거절 (관리 이슈)"
+    {t:"기본 정보",items:[
+      "4층 세미나실은 5층과 좌우가 등지고 있는 유사 구조",
+      "현장에서는 약 42석 기준으로 안내",
+      "약간 더 정사각형에 가까운 느낌이며, 책상이 5층보다 좁아 공간이 더 넓어 보이는 편",
+      "인원이 적을 것이 확실하면 4층 사용을 먼저 권장할 수 있음"
+    ]},
+    {t:"전자교탁 및 영상 장비",items:[
+      "전자교탁은 4층 세미나실 기준으로 안내",
+      "전자교탁 내부에 PC와 음향 세팅이 포함되어 있음",
+      "PC는 사용 가능하지만 다소 느린 편 — 실제로는 대부분 노트북을 연결해 사용",
+      "시간이 되면 건물에서 기본 장비를 켜두어 바로 사용 가능",
+      "프로젝터와 스크린은 없고, TV 1대 중심으로 운영",
+      "TV 단독 사용이나 별도 세팅이 필요하면 미리 요청해야 하며, 건물 관리팀을 통해 조율",
+      "⚠️ 전자교탁은 절대 이동하면 안 됨 — 내부 장비 손상 우려가 있어 원위치 확인 필요"
+    ]},
+    {t:"좌석 및 동선",items:[
+      "좌석 배치는 내부에서 자유롭게 변경 가능",
+      "행사 후에는 현재 배치대로 원상복구 필수",
+      "5층과 달리 추가 의자·테이블 여유 창고가 없어 추가 세팅 폭이 작음",
+      "4층과 5층을 오가는 행사가 있으면 후면 계단보다 메인 전면 방향 계단 이용 안내 권장"
+    ]},
+    {t:"운영상 차이점",items:[
+      "5층은 뒤쪽 유리 창고를 활용해 추가 세팅이 가능하지만 4층은 그 여유가 적음",
+      "5층은 스크린 기반 운영, 4층은 TV 중심 운영",
+      "5층보다 적은 인원 행사에 4층이 더 어울리는 경우가 많음"
     ]}
   ]
 },
@@ -271,29 +478,25 @@ conference:{
   icon:"C",iconBg:"#7c3aed",badgeBg:"#ede9fe",badgeC:"#5b21b6",
   sections:[
     {t:"구조적 특징",items:[
-      "동시 송출이 안 되는 구조 — 누가 여기서 말하고 있는데 다른 사람이 누르면 기존 사람은 끊김 (무전기와 유사)",
+      "동시 송출이 안 되는 구조 — 누군가 발언 중인데 다른 사람이 누르면 기존 발언이 끊기는 무전기와 유사한 구조",
       "일채용 시스템을 기본적으로 사용",
-      "보통 높은 분들 회의 시 사용, 나머지 수행원들은 양쪽 스툴에서 대기",
-      "정부 부처 행사를 좀 많이 선호하는 편"
+      "보통 높은 분들 회의에 사용되고, 수행 인원은 양쪽 스툴에서 대기하는 경우가 많음"
     ]},
     {t:"HDMI/영상 연결",items:[
-      "⚠️ 박병원홀과 달리 노트북을 꽂는다고 바로 나오는 게 아님",
-      "별도의 변경 작업이 필요 — 사전에 건물 시설 담당자에게 미리 말씀 필수",
-      "⚠️ 영상/음향 장비는 건물 신고 운영 관리 소유 — 직접 만지면 안 됨",
-      "⚠️ 직접 만졌다가 세팅 변경/고장 시 책임소재 따지기 힘들고 관리실 입장에서도 번거로움",
-      "개별 주찬해서 노트북 연결하실 수 있으나 미리 말씀해주셔야 된다고 안내"
+      "박병원홀과 달리 노트북을 꽂는다고 바로 출력되지 않음",
+      "별도의 변경 작업이 필요하므로 사전에 건물 시설 담당자에게 말씀 필수",
+      "⚠️ 영상/음향 장비는 건물 신고 운영 관리 소유라 직접 만지면 안 됨",
+      "⚠️ 세팅 변경이나 고장 시 책임소재 문제가 생길 수 있으므로 반드시 건물 관리실을 통해 요청"
     ]},
     {t:"현수막 부착",items:[
-      "공기관 행사 특성상 의전, 현수막, 사진 찍는 것 엄청 신경 씀",
-      "기본적으로 현수막 부착 안 된다고 안내",
-      "개별 행사건에 현수막을 붙여야 하는 경우 정면 벽 또는 화이트보드 쪽 두 군데로 안내",
-      "벽에 자국이 많이 남아 있음 (실제로 많이 붙였음)",
-      "양쪽에 보이는 스툴은 자유롭게 사용 가능"
+      "공기관 행사 특성상 의전, 현수막, 사진 촬영에 매우 민감한 공간",
+      "기본적으로 현수막 부착은 불가로 안내",
+      "개별 행사 특성상 꼭 필요할 경우 정면 벽 또는 화이트보드 쪽 두 군데로 안내",
+      "벽에 자국이 많이 남아 있는 편이라 부착 시 더욱 주의 필요"
     ]},
     {t:"테이블 이동",items:[
-      "컨퍼런스룸이 비어 있고 외부에서 따로 요청 예약이 잡혀 있다면 안쪽 테이블을 이쪽(박병원홀 등)으로 옮겨서 사용 가능",
-      "요청이 들어오면 가능하나 행사 주체별로 개별 검토 후 결정",
-      "이미 대관이 되어 있으면 안 됨"
+      "컨퍼런스룸이 비어 있고 외부 요청으로 예약이 잡혀 있다면 안쪽 테이블을 박병원홀 등으로 이동해 사용할 수 있음",
+      "해당 요청은 행사 건별로 개별 검토 후 결정"
     ]}
   ]
 },
@@ -302,100 +505,241 @@ common:{
   icon:"★",iconBg:"#d97706",badgeBg:"#fef3c7",badgeC:"#92400e",
   sections:[
     {t:"QR코드 및 방문자 출입",items:[
-      "대관 승인 후 신청자 핸드폰으로 EQR(대관용 QR) 알림이 바로 나옴",
-      "EQR 화면 상단 제목을 누르면 URL 복사하기가 있음 — 복사된 상태에서 공유",
-      "공유 방법은 행사 측에서 알아서 진행 — 문자, 카톡, 단톡방, 폼 안에 URL 삽입 등",
+      "대관 승인 후 신청자 휴대폰으로 EQR(대관용 QR) 알림이 발송됨",
+      "카카오톡 탭 매니저에서 EQR 화면 상단 제목을 누르면 URL 복사 가능",
+      "복사한 URL은 문자, 카카오톡, 메일, 폼 등 행사 측이 원하는 방식으로 자유롭게 공유",
+      "참가자는 URL로 들어오면 바로 EQR 화면이 떠서 그 화면으로 입장 가능",
       "방문자 초대는 30분 전부터 활성화",
-      "⚠️ QR 이미지 캡처해서 배너에 삽입하면 안 됨!",
-      "⚠️ 컨트롤룸 케이스페이스 담당 핀포인트 정책상 QR코드가 랜덤하게 리셋됨",
-      "⚠️ 이미지가 당일 찍었을 때 먹힐 수도 있고 안 먹힐 수도 있음 — 안 먹히는 경우가 더 많음",
-      "⚠️ 참가자 혼란 및 인포 항의 사례 발생 가능"
+      "마포는 공용 건물이라 1층 메인 게이트 태그가 필수",
+      "1층만 찍으면 이후 대관 층까지는 자유롭게 이동 가능",
+      "계단 이동 시에도 QR 태그가 필요함",
+      "평일 저녁 6시 이후에는 일반적으로 1층 게이트 태그 중심으로 운영",
+      "선릉센터와 달리 마포는 디캠프 단독 건물이 아니라 보안이 더 엄격함",
+      "⚠️ QR 이미지 캡처 후 배너 등에 삽입하면 안 됨",
+      "⚠️ 핀포인트 정책상 QR코드가 랜덤하게 리셋되어 행사 당일 이미지가 안 먹힐 수 있음",
+      "⚠️ 참가자 혼란 및 1층 인포 항의 사례가 발생할 수 있으므로 URL 공유만 안내"
+    ]},
+    {t:"층간 이동 (4층~5층)",items:[
+      "4층과 5층을 오가는 경우 후면 계단보다 메인 전면 방향 계단 이용 권장",
+      "메인 방향 계단 쪽은 4층으로 나오는 층의 자동문을 열어두는 경우가 있어 이동이 더 편함",
+      "기본 메인 동선은 엘리베이터 홀이며, 층간 계단 이동은 행사 성격에 따라 예외적으로 안내"
+    ]},
+    {t:"1층 배너 배치",items:[
+      "고층부 출입 동선과 공용부를 활용해 1층 배너 배치 가능",
+      "원하는 위치에 배치 가능",
+      "미리 요청하면 1층 메인 게이트 앞쪽에도 배치 가능"
     ]},
     {t:"와이파이 및 네트워크",items:[
-      "층마다 게스트 와이파이 있음 — 비밀번호 없이 연결 가능",
-      "일반적인 노트북 작업, 핸드폰 전혀 문제없음",
-      "간혹 2G/5G 비밀번호 요청 시 — 확인 후 메일로 안내",
-      "벽 쪽에 콘센트와 유선 포트(랜선) 있음 — 다 살아 있어서 사용 가능",
-      "⚠️ 랜선이나 멀티탭은 행사 측이 직접 준비 — 기본적으로 대여해 드리는 건 없음"
+      "층마다 게스트 와이파이가 있으며 비밀번호 없이 연결 가능",
+      "일반적인 노트북 작업, 휴대폰 사용에는 문제 없는 수준",
+      "간혹 2G/5G 비밀번호 요청이 있을 경우 확인 후 메일로 안내",
+      "벽 쪽 콘센트와 유선 포트(랜선)는 사용 가능",
+      "⚠️ 랜선과 멀티탭은 행사 측이 직접 준비해야 함 — 기본 대여 없음"
     ]},
     {t:"에어컨 및 환경",items:[
-      "현재 냉방 모드 — 에어컨 자유롭게 켜서 사용 가능",
+      "현재 냉방 모드로 운영 중 — 에어컨 자유롭게 사용 가능",
       "창문 오픈도 자유롭게 가능"
     ]},
-    {t:"쓰레기 처리",items:[
-      "소량이면 각 층 쓰레기통에 분리배출 가능",
-      "대량 쓰레기는 지하 3층 주차장 반대편 벽면 분리수거장 이용",
-      "현수막, 배너 등도 지하 3층에 처분하고 감",
-      "행사 측에서 현장에서 처리하고 가는 것이 기본 (보통 가져갈 수 없어서)"
+    {t:"구내식당 이용",items:[
+      "지하 1층(B1F)에 구내식당이 있으며 아워봉이 위탁 운영",
+      "외부인도 이용 가능",
+      "대관 행사 기준 식사는 1인 7,000원",
+      "운영 시간은 11시 30분부터 약 1시 30분까지로 고정",
+      "평균 식수는 40~50명 수준",
+      "약 50명 이상 단체 이용 시에는 사전 공유가 필수",
+      "단체 이용은 사전 현장 카드 결제 후 식권을 받아 당일 참가자에게 배포하는 방식",
+      "⚠️ 식당 운영 시간은 변경 불가하므로 행사 시간과 맞춰 조율해야 함"
     ]},
+    {t:"쓰레기 처리 및 정리",items:[
+      "소량 쓰레기는 각 층 쓰레기통에 분리배출 가능",
+      "대량 쓰레기는 지하 3층 주차장 반대편 벽면 분리수거장 이용",
+      "현수막, 배너 등도 지하 3층에서 처리 가능",
+      "행사 측에서 현장에서 처리하고 가는 것이 기본",
+      "음식물 쓰레기통이 있어 간단한 음식물 쓰레기 처리 가능"
+    ],noteTitle:"대량 쓰레기 처리 위치 안내",note:[
+      "현장 안내 멘트: '지하 4층까지 가는 엘리베이터 타시고, 지하 3층에서 내린 뒤 문 열고 오른쪽으로 가시면 됩니다.'",
+      "5층에는 엘리베이터 호기 표시가 없어, 호수 대신 '지하 4층까지 가는 엘리베이터' 기준으로 설명하는 것이 가장 덜 헷갈림"
+    ],figure:"trash-guide"},
     {t:"기물 파손 및 페널티",items:[
       "원칙적으로 기물 파손 시 청구 가능하다고 안내됨",
       "현재까지 크리티컬한 파손 사례는 없었음",
-      "사소한 위반은 넘어가고 있는 상황 (행사가 매우 많아 라운딩을 못 돌고 있음)",
-      "페널티 제도 있음 — 예: 테이프 부착 등 발견 시 담당자에게 위반 통보",
-      "CCTV로 잡으려면 잡을 수 있으나 리소스가 많이 들어감 (CCTV 확인은 인사팀 원석님만 가능)",
-      "바닥 흑색 자국 등 발견 사례 있음 — 화학약품으로 제거 필요",
-      "앞으로 이슈 생기면 더 강화될 수 있음"
+      "사소한 위반은 넘어가는 경우도 있으나, 행사 수가 많아 라운딩이 완벽히 되지 않는 상황",
+      "페널티 제도가 있으며, 테이프 부착 등 위반 발견 시 담당자에게 위반 통보 가능",
+      "CCTV로 확인은 가능하지만 리소스가 많이 들어 실제 추적은 드문 편",
+      "CCTV 확인은 인사팀 원석님만 가능",
+      "바닥 흑색 자국 등은 화학약품으로 제거가 필요할 수 있음"
     ]},
     {t:"시설 유지/보수",items:[
       "기본적인 시설 유지보수는 건물 관리실에서 담당",
-      "마이크 배터리, 전구 교체 등 기본적인 것들은 신경 쓰지 않아도 됨",
-      "문제 발견 시 공유해주면 건물에 신고하여 조치 요청",
-      "체크리스트는 별도로 없고, 건물에서 기본적으로 관리",
-      "가구는 디캠프 소유이나 마이크/빔프로젝터 등 음향/영상 장비는 건물 신고 운영 관리 소유"
+      "마이크 배터리, 전구 교체 등은 별도로 신경 쓰지 않아도 됨",
+      "문제 발견 시 공유하면 건물에 신고하여 조치 요청",
+      "체크리스트는 별도로 없고 건물 측에서 기본 관리",
+      "기본적인 시설과 장비는 건물 관리실이 중심으로 대응"
+    ]}
+  ]
+},
+process:{
+  name:"대관 운영 프로세스",sub:"Operation Process",tag:"운영 흐름",
+  icon:"↺",iconBg:"#0f766e",badgeBg:"#ccfbf1",badgeC:"#115e59",
+  sections:[
+    {t:"대관 신청 및 승인 흐름",items:[
+      "TaapSpace 대관 신청 링크를 통해 누구나 신청 가능",
+      "신청 가능 범위는 신청일 기준 미래 60일 이내만 오픈",
+      "0시 기준이 아니라 현재 시간 기준으로 열림",
+      "예: 오늘이 4월 17일 14시라면 6월 16일 14시까지 신청 가능",
+      "신청 데이터는 컨트롤룸(관리재단)에서 승인 및 현황 확인",
+      "확정되면 운영 매니저에게 전달되어 안내 진행",
+      "사전답사가 필요한 경우 건별로 별도 일정 조율",
+      "원하는 일정 기준 2주 전에는 신청해두는 편이 안전"
     ]},
-    {t:"대관 운영 프로세스",items:[
-      "대관 신청 링크가 있고, 해당 링크에서 누구든 신청 가능",
-      "신청 데이터는 컨트롤룸(관리재단)에서 승인/현황 확인 가능",
-      "확정되면 운영 매니저에게 전달 → 안내 진행",
-      "사전답사가 있는 경우 건바이건으로 별도 일정 조율",
-      "사전답사 조건: 특위권 제외, 승인된 건 중에서 유선/메일로 일정 소통, 공간이 비어 있어야 하고 운영이 가능해야 함",
-      "방문자 초대 드리고 투어 진행",
-      "기본적인 세팅(의자 배치, HDMI, 마이크, 빔프로젝터)과 문 개패는 건물 관리실에서 처리",
-      "운영 매니저가 별도 요청할 필요 없이 캘린더 보고 자동 처리됨",
-      "관리실 담당 팀장님 및 직원분들, 1층 인포에서도 캘린더 확인 중",
-      "특이사항은 오리님에게 공유 → 확인 받은 후 → 최종 안내"
+    {t:"일정 변경 시",items:[
+      "실무상 가장 간편한 방식은 기존 예약을 일단 유지한 채 변경 가능성을 메일로 먼저 공유하는 것",
+      "변경 확정 시에는 변경 일정으로 재신청하고, 담당자가 내용을 이미 알고 있으면 빠르게 승인 가능",
+      "동일 행사이고 일정만 바뀌는 경우는 내용 확인이 빠른 편",
+      "⚠️ 60일 범위를 벗어나는 미래 일정은 해당 시점에 다시 신청해야 하며 사전 홀딩은 불가"
+    ]},
+    {t:"사전답사 진행",items:[
+      "승인된 건 중 유선 또는 메일로 일정 소통",
+      "공간이 비어 있고 운영이 가능한 조건인지 확인",
+      "방문자 초대 발송 후 투어 진행"
+    ]},
+    {t:"행사 당일 세팅",items:[
+      "기본 세팅(의자 배치, HDMI, 마이크, 빔 프로젝터)은 건물 관리실에서 대응",
+      "문 개패도 건물 관리실에서 처리",
+      "운영 매니저가 별도로 요청하지 않아도 캘린더를 보고 자동 대응하는 구조",
+      "관리실 담당 팀장님, 직원분들, 1층 인포에서도 캘린더를 확인 중"
+    ]},
+    {t:"특이사항 처리 흐름",items:[
+      "특이사항이 있을 때는 한우리님(담당자)에게 공유 → 확인 받은 후 → 최종 안내",
+      "추가 마이크, 테이블 이동, 컨퍼런스룸 장비 사용 등 특별 요청은 모두 사전 협의 필요",
+      "랜선, 멀티탭 등은 기본 대여 품목이 아님"
+    ]},
+    {t:"디캠프 협력 사항",items:[
+      "디캠프는 스타트업 투자, 연계, 입주 사무실 제공 등을 하고 있음",
+      "관련 세미나나 행사는 대관 비용 없이 협력 가능한 경우가 있음",
+      "특히 입주사들이 함께 들을 수 있는 행사는 더욱 환영",
+      "관련 사항은 별도 메일로 문의 후 협의 가능"
     ]}
   ]
 },
 contacts:{
-  name:"주요 연락처 및 참고",sub:"Contacts & Reference",tag:"참고",
+  name:"비상 연락처 및 참고",sub:"Contacts & Reference",tag:"참고",
   icon:"☎",iconBg:"#dc2626",badgeBg:"#fef2f2",badgeC:"#991b1b",
   sections:[
-    {t:"주요 연락처",items:[
-      "건물 관리실 — 시설 유지보수, 장비 세팅, 문 개패, 시설 유지/보수 전반",
-      "통신팀장님 — 음향/영상 장비 관련, 커스텀 음향 세팅 요청 시 메인 담당",
-      "오리님 — 대관 승인, 특이사항 결정, 최종 확인",
-      "진서명 과장님 — 대관 예약 시스템 관련 (컨트롤룸)",
-      "인사팀 원석님 — CCTV 확인 필요 시",
-      "1층 인포 — 방문자 안내, 캘린더 확인, QR 관련 문의 대응",
-      "1층 카페 — 음료/다과 주문 (선결제, 미리 말씀)"
-    ]},
-    {t:"핵심 기억 사항",items:[
-      "⚠️ 창고 비밀번호: 070",
-      "⚠️ 홍보물: 스탠딩형만 가능, 부착 금지",
-      "⚠️ QR코드: URL로만 공유, 캡처 금지 (랜덤 리셋)",
-      "⚠️ 전자교탁: 이동 금지",
-      "⚠️ 영상/음향 장비: 직접 만지지 않기, 건물 통해 요청",
-      "⚠️ 컨퍼런스룸 HDMI: 사전 요청 필수 (꽂는다고 안 나옴)",
-      "⚠️ 랜선/멀티탭: 행사 측 직접 준비",
-      "⚠️ 콘솔룸: 출입 금지",
-      "⚠️ 원상복구: 모든 공간 행사 후 필수"
+    {t:"주요 연락처",table:{
+      headers:["구분","내용"],
+      rows:[
+        ["건물 관리실","시설 유지보수, 장비 세팅, 문 개패 등"],
+        ["통신팀장님","음향/영상 장비 관련, 커스텀 음향 세팅 요청 시"],
+        ["한우리님","대관 승인, 특이사항 결정, 최종 확인"],
+        ["진서명 과장님","대관 예약 시스템 관련 (컨트롤룸)"],
+        ["인사팀 원석님","CCTV 확인 필요 시"],
+        ["인사팀","구내식당(아워봉) 단체 이용 관련"],
+        ["1층 인포","방문자 안내, 캘린더 확인"],
+        ["1층 카페","음료/다과 주문 (선결제)"],
+        ["디캠프 공식 이메일","contact@dcamp.kr"]
+      ]
+    }},
+    {t:"기억해야 할 주요 사항 요약",table:{
+      headers:["항목","내용"],
+      rows:[
+        ["창고 비밀번호","0701*"],
+        ["홍보물","스탠딩형만 가능, 부착 금지 (예외 시 실리콘 테이프만 허용)"],
+        ["QR코드","URL로만 공유, 캡처 금지"],
+        ["건물 출입","1층 QR 태그 필수, 계단 이동 시에도 QR 필요"],
+        ["전자교탁","4층 세미나실 기준 이동 금지"],
+        ["영상/음향 장비","직접 만지지 않기, 건물 통해 요청"],
+        ["컨퍼런스룸 HDMI","사전 요청 필수"],
+        ["4층 세미나실","세미나 A / B / C 기준으로 안내"],
+        ["랜선/멀티탭","행사 측 직접 준비"],
+        ["콘솔룸","출입 금지"],
+        ["구내식당","B1F, 아워봉 위탁 운영, 대관 기준 7,000원"],
+        ["일정 변경","기존 예약 유지 후 메일로 먼저 공유하는 방식이 가장 간편"],
+        ["원상복구","모든 공간 행사 후 필수"]
+      ]
+    }},
+    {t:"운영 기준 (04월 14일 협의 / PM님, 한우리 매니저님)",noteStyle:"neutral",note:[
+      "운영 매니저는 현장 운영 시 공간 환경 및 전반적인 컨디션 확인을 중심으로 대응",
+      "시설, 장비, 정책 등 특이사항 또는 추가 요청이 필요한 경우에는 디캠프 한우리님 메일을 통해 별도 문의하도록 안내"
     ]}
   ]
 }
 };
 
 const NAV=[
+  {id:"overview",label:"개요",c:"#111827"},
   {id:"bahk",label:"박병원홀",c:"#1d4ed8"},
   {id:"storage",label:"A/C 창고",c:"#78716c"},
-  {id:"seminar",label:"세미나 A",c:"#059669"},
+  {id:"seminar5",label:"5층 세미나 A",c:"#059669"},
+  {id:"floor4",label:"4층 세미나실",c:"#f97316"},
   {id:"conference",label:"컨퍼런스룸",c:"#7c3aed"},
   {id:"common",label:"공통 안내",c:"#d97706"},
+  {id:"process",label:"운영 프로세스",c:"#0f766e"},
   {id:"contacts",label:"연락처",c:"#dc2626"}
 ];
 
-let current="bahk";
+let current="overview";
+
+function escapeHtml(value){
+  return String(value)
+    .replace(/&/g,"&amp;")
+    .replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;")
+    .replace(/\"/g,"&quot;")
+    .replace(/'/g,"&#39;");
+}
+
+function renderItems(items){
+  return items.map(it=>{
+    const w=String(it).startsWith("⚠️");
+    return `<div class="item${w?" warn":""}">${escapeHtml(it)}</div>`;
+  }).join("");
+}
+
+function renderParagraphs(text){
+  const lines=Array.isArray(text)?text:[text];
+  return lines.map(line=>`<p class="paragraph">${escapeHtml(line)}</p>`).join("");
+}
+
+function renderTable(table){
+  const head=table.headers.map(h=>`<th>${escapeHtml(h)}</th>`).join("");
+  const rows=table.rows.map(row=>{
+    return `<tr>${row.map(cell=>`<td>${escapeHtml(cell)}</td>`).join("")}</tr>`;
+  }).join("");
+  return `<div class="table-wrap"><table class="info-table"><thead><tr>${head}</tr></thead><tbody>${rows}</tbody></table></div>`;
+}
+
+function renderNote(section){
+  const lines=Array.isArray(section.note)?section.note:[section.note];
+  const cls=section.noteStyle==="neutral"?"note-box neutral":"note-box";
+  const title=section.noteTitle?`<strong>${escapeHtml(section.noteTitle)}</strong>`:"";
+  return `<div class="${cls}">${title}${lines.map(line=>`<div>${escapeHtml(line)}</div>`).join("")}</div>`;
+}
+
+function renderTrashGuide(){
+  return `<div class="route-summary">
+    <div class="route-label">현장 안내 멘트</div>
+    <div class="route-copy">"오른쪽 아래 엘리베이터 타시고, 지하 3층에서 내리신 뒤 바로 아래 문을 지나 진행 방향 기준 오른쪽 정면으로 가시면 됩니다."</div>
+    <div class="route-subcopy">이미지를 눌러 크게 볼 수 있게 반영했습니다.</div>
+  </div>
+  <div class="guide-card route-guide">
+    <div class="guide-visual">
+      <a class="guide-image-link" href="./trash-route_1_trimmed.png" target="_blank" rel="noopener">
+        <img src="./trash-route_1_trimmed.png" alt="쓰레기장 동선 안내 이미지">
+      </a>
+    </div>
+  </div>`;
+}
+
+function renderSectionContent(section){
+  let html="";
+  if(section.text) html+=renderParagraphs(section.text);
+  if(section.table) html+=renderTable(section.table);
+  if(section.items) html+=renderItems(section.items);
+  if(section.note) html+=renderNote(section);
+  if(section.figure==="trash-guide") html+=renderTrashGuide();
+  return html;
+}
 
 function renderNav(){
   const nav=document.getElementById("nav");
@@ -424,19 +768,15 @@ function renderContent(){
     <div class="space-header">
       <div class="space-icon" style="background:${d.iconBg}">${d.icon}</div>
       <div>
-        <h2>${d.name} <span class="badge" style="background:${d.badgeBg};color:${d.badgeC}">${d.tag}</span></h2>
-        <div class="sub">${d.sub}</div>
+        <h2>${escapeHtml(d.name)} <span class="badge" style="background:${d.badgeBg};color:${d.badgeC}">${escapeHtml(d.tag)}</span></h2>
+        <div class="sub">${escapeHtml(d.sub)}</div>
       </div>
     </div>`;
 
-  d.sections.forEach((s,i)=>{
-    const items=s.items.map(it=>{
-      const w=it.startsWith("⚠️");
-      return `<div class="item${w?" warn":""}">${it}</div>`;
-    }).join("");
+  d.sections.forEach((section,index)=>{
     html+=`<div class="section">
-      <div class="section-title${i===0?" open":""}" data-open="${i===0}" onclick="toggleSection(this)">${s.t}</div>
-      <div class="section-body${i===0?" open":""}">${items}</div>
+      <div class="section-title${index===0?" open":""}" data-open="${index===0}" onclick="toggleSection(this)">${escapeHtml(section.t)}</div>
+      <div class="section-body${index===0?" open":""}">${renderSectionContent(section)}</div>
     </div>`;
   });
 
@@ -455,17 +795,17 @@ window.toggleSection=function(el){
   if(body) body.classList.toggle("open");
 };
 
-document.querySelectorAll(".room").forEach(r=>{
-  r.addEventListener("click",()=>{
-    current=r.dataset.id;
+document.querySelectorAll(".room").forEach(room=>{
+  room.addEventListener("click",()=>{
+    current=room.dataset.id;
     renderAll();
     document.getElementById("nav").scrollIntoView({behavior:"smooth",block:"start"});
   });
 });
 
 const navEl=document.getElementById("nav");
-const observer=new IntersectionObserver(([e])=>{
-  navEl.classList.toggle("stuck",!e.isIntersecting);
+const observer=new IntersectionObserver(([entry])=>{
+  navEl.classList.toggle("stuck",!entry.isIntersecting);
 },{threshold:[1],rootMargin:"-1px 0px 0px 0px"});
 observer.observe(navEl);
 
